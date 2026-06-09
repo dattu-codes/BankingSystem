@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Banking System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="blob1"></div>
+        <div class="blob2"></div>
+    </div>
+    <div class="app-container">
+        <!-- Auth View -->
+        <div id="auth-view" class="view glass-panel active">
+            <h1 class="logo">🏦 NextGen Bank</h1>
+            <p class="subtitle">Secure, fast, and beautiful banking.</p>
+            
+            <div class="tabs">
+                <button class="tab-btn active" id="tab-login">Login</button>
+                <button class="tab-btn" id="tab-register">Register</button>
+            </div>
+            
+            <form id="auth-form" class="fade-in">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required placeholder="Enter your username">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="primary-btn" id="auth-submit">Login</button>
+            </form>
+            <div id="auth-error" class="error-msg"></div>
+        </div>
+
+        <!-- Dashboard View -->
+        <div id="dashboard-view" class="view glass-panel hidden">
+            <header class="dashboard-header">
+                <h2>Welcome, <span id="user-display"></span></h2>
+                <button id="logout-btn" class="secondary-btn">Logout</button>
+            </header>
+            
+            <div class="balance-card">
+                <h3>Total Balance</h3>
+                <h1 class="balance-amount">$<span id="balance-display">0.00</span></h1>
+            </div>
+
+            <div class="action-grid">
+                <div class="action-card" id="btn-deposit">
+                    <div class="icon">↓</div>
+                    <span>Deposit</span>
+                </div>
+                <div class="action-card" id="btn-withdraw">
+                    <div class="icon">↑</div>
+                    <span>Withdraw</span>
+                </div>
+                <div class="action-card" id="btn-transfer">
+                    <div class="icon">→</div>
+                    <span>Transfer</span>
+                </div>
+                <div class="action-card" id="btn-history">
+                    <div class="icon">📋</div>
+                    <span>History</span>
+                </div>
+            </div>
+
+            <!-- Transaction History Modal inside Dashboard -->
+            <div id="history-section" class="history-section hidden fade-in">
+                <h3>Recent Transactions</h3>
+                <ul id="transaction-list" class="transaction-list">
+                    <!-- Transactions will be populated here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for Actions -->
+    <div id="action-modal" class="modal hidden">
+        <div class="modal-content glass-panel">
+            <span class="close-btn">&times;</span>
+            <h2 id="modal-title">Action</h2>
+            <form id="action-form">
+                <div class="input-group" id="transfer-group" style="display: none;">
+                    <label for="target-username">Recipient Username</label>
+                    <input type="text" id="target-username" placeholder="Recipient username">
+                </div>
+                <div class="input-group">
+                    <label for="amount">Amount ($)</label>
+                    <input type="number" id="amount" required min="0.01" step="0.01" placeholder="0.00">
+                </div>
+                <button type="submit" class="primary-btn">Confirm</button>
+            </form>
+            <div id="action-error" class="error-msg"></div>
+            <div id="action-success" class="success-msg"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
