@@ -137,7 +137,24 @@ Welcome to the Banking System
 
 ---
 
+### Step 4: Running Integration & Concurrency Tests
+To execute the integration tests verifying database transactions, rollback behavior, and concurrent thread-safe deposits:
+```bash
+mvn test
+```
+
+---
+
+### Step 5: Containerized Deployment (Docker Compose)
+To compile the Spring Boot backend and launch it in container isolation:
+```bash
+docker-compose -f deployment/docker-compose.yml up --build
+```
+
+---
+
 ## 🛠️ Tech Stack & Key Libraries
 *   **Backend:** Java 17, Spring Boot, Spring Data JPA, H2 Database, Hibernate, Lombok
+*   **Testing:** JUnit 5, Spring Boot Test, Multi-threaded Concurrency testing
 *   **Mobile:** Java/Kotlin, Android SDK, Retrofit, OkHttp, XML layouts
-*   **Build Systems:** Maven, Gradle
+*   **Build Systems & DevOps:** Maven, Gradle, Docker, Docker Compose
