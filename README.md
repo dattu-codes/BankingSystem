@@ -1,6 +1,8 @@
-# 🏦 Full-Stack Banking System
+# 🏦 Banking Management System
 
-A robust, enterprise-grade **Full-Stack Banking System** simulating core banking workflows. The system features a tiered architecture spanning a **Spring Boot REST API** backend, a **Native Android Client** frontend, and a **Command Line Interface (CLI)** client for quick testing.
+Simulated a real-world core banking system, supporting user registration, secure money transfers, interest calculations, and transaction logging.
+
+Designed strictly around OOP principles for maximum modularity and reusability, with multi-threaded operations to simulate concurrent transactions safely.
 
 <div align="center">
   <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 17" />
